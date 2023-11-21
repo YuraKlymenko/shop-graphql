@@ -6,8 +6,7 @@ import {ElectronicsComponent} from './components/category/electronics/electronic
 import {HomegardenComponent} from './components/category/homegarden/homegarden.component';
 import {SportsputdoorComponent} from './components/category/sportsputdoor/sportsputdoor.component';
 import {ProductsComponent} from "./pages/products/products.component";
-import {ProductsModule} from "./pages/products/products.module";
-import {MainModule} from "./pages/main/main.module";
+import {ProductDetailsComponent} from "./pages/product-details/product-details.component";
 
 const routes: Routes = [
   {path: '', component: MainComponent, pathMatch: 'full'},
@@ -18,7 +17,10 @@ const routes: Routes = [
       {path: 'sports-outdoor', component: SportsputdoorComponent}
     ]
   },
-  {path: 'products', component: ProductsComponent},
+  {path: 'products', children: [
+      {path: '', component: ProductsComponent},
+      {path: ':productName', component: ProductDetailsComponent}
+  ]},
 ]
 
 @NgModule({
