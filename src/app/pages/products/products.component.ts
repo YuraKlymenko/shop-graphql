@@ -41,7 +41,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   openProductDetails(product: IProduct): void {
     if (!product) return;
-    this.router.navigate(['/products', {productName: product.productName}])
+    this.router.navigate(['/products/productName', {productName: product.productName}])
   }
 
   private getCollectionProducts(collectionId: number) {
