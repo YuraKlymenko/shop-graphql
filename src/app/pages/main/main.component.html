@@ -1,0 +1,31 @@
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="image"></div>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+          <h1 class="maintext text-white">Vendure <span class="secondtext">Angular</span> Starter</h1>
+        </div>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+          <p class="mt-4 text-2xl text-white"> A headless commerce storefront starter
+            kit built with <a href="https://www.vendure.io" class="text-blue-300">
+              Vendure
+            </a> &amp; <a href="https://angular.io/" class="text-red-700"> Angular </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="catcontainer" *ngIf="collections?.length">
+          <div *ngFor="let item of collections; let i = index" [routerLink]="'/products'" [queryParams]="{collectionId: item?.id}" class="pointer-event">
+            <img class="imagecat" src="{{item?.assets?.[0]?.source}}">
+            <div class=" textcontainer d-flex justify-content-center align-items-center">
+              <span class="imgtext">{{item.name}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+<div *ngIf="collection" class="main-container products">
+  <h2 class="main-title">{{collection.name}}</h2>
+  <div class="breadcrumbs">
+    <a href="/" class="link">
+      <i class="fas fa-home"></i>
+    </a>
+    <div class="divider"><i class="fas fa-chevron-right"></i></div>
+    <a *ngIf="collection.breadcrumbs.length" href="#" class="link">
+      {{collection.breadcrumbs[1].name}}
+      <span *ngIf="collection.breadcrumbs[2]?.name">/ {{collection.breadcrumbs[2].name}}</span>
+    </a>
+  </div>
+
+  <div *ngIf="collection.children.length" class="collections__container">
+    <h3 class="section-title">Collections</h3>
+
+    <div class="collections__list">
+      <ng-container *ngFor="let child of collection.children">
+        <a href="#" class="collections__item">
+          <span class="text">{{child.name}}</span>
+        </a>
+      </ng-container>
+    </div>
+  </div>
+
+  <hr class="products__divider">
+
+  <div class="procucts__container">
+    <div class="products__filter">
+      TODO: 'y[00] continue here - filters
+<!--      <ng-container *ngIf="productFilters?.length">-->
+<!--        <div class="filter__group">-->
+<!--          <h4 class="filter__title">{{productFilters[0]?.facetValue?.facet?.name | uppercase}}</h4>-->
+<!--          <ul class="filter__checks">-->
+<!--            <li class="filter_checks__item">-->
+<!--              <i class="fas fa-check-square"></i>-->
+<!--              <span class="text">{{productFilters[0]?.facetValue?.name}}</span>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </ng-container>-->
+    </div>
+
+    <div class="procucts__list">
+      <a *ngFor="let product of products" href="#" class="products__item">
+        <div class="image-square">
+          <img src="{{product.productAsset.preview}}">
+        </div>
+        <span class="product_title">{{product?.productName}}</span>
+        <span *ngIf="product?.priceWithTax?.max" class="price">
+          ${{product.priceWithTax.max / 100 | number: '2.2' }}
+        </span>
+      </a>
+    </div>
+  </div>
+</div>

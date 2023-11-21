@@ -1,0 +1,16 @@
+.header{
+    background-color: #4f4f58;
+}
+.nav-link {
+    color: white;
+}
+.filter{
+    filter:  brightness(0) invert(1);
+}
+.rounded-full {
+    width: 20px;
+    height: 20px;
+    border-radius:50% 50%;
+    background-color: #0000ff;
+    color: white;
+}

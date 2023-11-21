@@ -1,0 +1,134 @@
+$dark: #111827
+$gray: #d1d5dc
+$dark-gray: rgb(75, 85, 99)
+$blue: #0d87c8
+
+.breadcrumbs
+  margin-bottom: 64px
+  display: flex
+  .link
+    color: $dark-gray
+    text-decoration: none
+    &:hover
+      opacity: .7
+  .divider
+    margin: 0 16px
+    color: $dark-gray
+
+.products
+  padding-top: 48px
+  padding-bottom: 48px
+  .main-title
+    margin-bottom: 38px
+    font-size: 48px
+    font-weight: 300
+  .products__divider
+    width: 100%
+    margin-top: 64px
+    margin-bottom: 64px
+    border-color: $gray
+    border-top: unset
+
+.collections__container
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  .section-title
+    margin-bottom: 24px
+    font-size: 24px
+    font-weight: 300
+  .collections__list
+    width: 100%
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    .collections__item
+      min-height: 50px
+      width: 25%
+      border-radius: 8px
+      display: block
+      overflow: hidden
+      position: relative
+      &:hover
+        .image-square
+          img
+            transform: scale(1.1)
+      .image-square
+        padding-bottom: 100%
+        img
+          max-width: 250px
+          transition: .3s
+      .text
+        padding: 5px 10px
+        background: white
+        border: 1px solid $dark
+        border-radius: 8px
+        color: rgba(#000, .8)
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        display: inline-block
+        font-size: 20px
+        text-align: center
+        font-weight: 400
+
+.procucts__container
+  display: grid
+  grid-template-columns: 1fr 4fr
+
+.products__filter
+  .filter__group
+    &:not(:last-child)
+      margin-bottom: 20px
+    .filter__title
+      margin-bottom: 10px
+      font-size: 16px
+    .filter__checks
+      list-style: none
+      .filter_checks__item
+        display: flex
+        align-items: center
+        cursor: pointer
+        &:not(:last-child)
+          margin-bottom: 5px
+        &:hover
+          i
+            opacity: .7
+        i
+          margin-right: 5px
+          color: $blue
+        .text
+          font-size: 14px
+
+.procucts__list
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-gap: 32px
+  .products__item
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    color: $dark
+    text-decoration: none
+    &:hover
+      .image-square
+        img
+          transform: scale(1.1)
+      span
+        opacity: .7
+    .image-square
+      width: 100%
+      margin-bottom: 10px
+      padding-bottom: 100%
+      border-radius: 4px
+      overflow: hidden
+      img
+        object-fit: cover
+        transition: .3s
+    span
+      &.product_title
+        font-size: 20px
+        margin-bottom: 5px
+        font-weight: 300
