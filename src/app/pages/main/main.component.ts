@@ -13,7 +13,8 @@ export class MainComponent {
 
   private subscription: Subscription = new Subscription()
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService,
+  ) {
   }
 
   ngOnInit() {

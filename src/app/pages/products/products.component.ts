@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApiService} from "../../services/api.service";
-import {EMPTY, empty, of, Subscription, switchMap} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {EMPTY, of, Subscription, switchMap} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ICollection, IProduct, IProductFilter} from "../../shared/interfaces";
 
 @Component({
@@ -19,6 +19,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
               private apiService: ApiService,
+              private router: Router,
   ) {
   }
 
@@ -38,11 +39,15 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.subscription.add(getCollectionStream$)
   }
 
+  openProductDetails(product: IProduct): void {
+    if (!product) return;
+    this.router.navigate(['/products', {productName: product.productName}])
+  }
+
   private getCollectionProducts(collectionId: number) {
     const getCollectionProductsStream$ = this.apiService.getCollectionProducts(collectionId).subscribe(data => {
       this.products = data.data.search.items;
       this.productFilters = data.data.search.facetValues;
-      console.log('y[1] facetValues', this.productFilters)
     });
 
     this.subscription.add(getCollectionProductsStream$)

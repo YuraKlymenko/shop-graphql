@@ -11,6 +11,8 @@ import {ComponentModule} from './components/component.module';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app.routing.module';
 import {ProductsModule} from "./pages/products/products.module";
+import {ProductDetailsModule} from "./pages/product-details/product-details.module";
+import {MainModule} from "./pages/main/main.module";
 
 
 const uri = 'https://demo.vendure.io/shop-api'; // <-- add the URL of the GraphQL server here
@@ -32,6 +34,8 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     RouterModule,
     AppRoutingModule,
     ProductsModule,
+    MainModule,
+    ProductDetailsModule,
   ],
   providers: [ApiService,
     {

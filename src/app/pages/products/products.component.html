@@ -62,15 +62,15 @@
     </div>
 
     <div class="procucts__list">
-      <a *ngFor="let product of products" href="#" class="products__item">
-        <div class="image-square">
-          <img src="{{product.productAsset.preview}}">
+      <ng-container *ngFor="let product of products">
+        <div *ngIf="product && product.productName" class="products__item cursor-pointer" (click)="openProductDetails(product)">
+          <div class="image-square">
+            <img src="{{product.productAsset.preview}}">
+          </div>
+          <span class="product_title">{{product?.productName}}</span>
+          <span *ngIf="product?.priceWithTax?.max" class="price">${{product.priceWithTax.max / 100 | number: '2.2' }}</span>
         </div>
-        <span class="product_title">{{product?.productName}}</span>
-        <span *ngIf="product?.priceWithTax?.max" class="price">
-          ${{product.priceWithTax.max / 100 | number: '2.2' }}
-        </span>
-      </a>
+      </ng-container>
     </div>
   </div>
 </div>

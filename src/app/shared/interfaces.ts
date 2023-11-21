@@ -18,7 +18,6 @@ export interface ICollection {
 
 export interface IProduct {
   productId: number;
-  name: string;
   slug: string;
   productName: string;
   description: string;
