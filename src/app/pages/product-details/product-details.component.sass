@@ -1,0 +1,174 @@
+.product
+  padding-top: 48px
+  padding-bottom: 48px
+
+.product__container
+  margin-bottom: 32px
+  display: -ms-grid
+  display: grid
+  -ms-grid-columns: 1fr 32px 1fr
+  grid-template-columns: repeat(2, 1fr)
+  grid-gap: 32px
+
+  .image-container
+    width: 100%
+    padding-bottom: 60%
+    border-radius: 4px
+    overflow: hidden
+
+  .product__content
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-align: start
+    -ms-flex-align: start
+    align-items: flex-start
+
+    .product__description
+      margin-bottom: 20px
+      font-weight: 300
+      line-height: 1.4
+
+    .product__price
+      margin-bottom: 10px
+      font-size: 30px
+
+      .smaller
+        font-size: 16px
+
+    .product__buttons
+      margin-bottom: 20px
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+
+      > *:not(:last-child)
+        margin-right: 16px
+
+    .btn
+      padding: 10px 15px
+      border-radius: 4px
+      cursor: pointer
+
+      &:hover
+        opacity: .7
+
+      &.to-cart
+        border: 2px solid #0d87c8
+        background-color: #0d87c8
+        color: #fff
+
+      &.to-wishlist
+        background-color: #fff
+        border: 2px solid #0d87c8
+        color: #0d87c8
+
+      i
+        margin-right: 5px
+
+    span.product__article
+      color: #4b5563
+      font-weight: 300
+
+    .product__terms
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-orient: vertical
+      -webkit-box-direction: normal
+      -ms-flex-direction: column
+      flex-direction: column
+      -webkit-box-align: start
+      -ms-flex-align: start
+      align-items: flex-start
+
+      > *:not(:last-child)
+        margin-bottom: 5px
+
+      b
+        font-size: 12px
+        line-height: 1.5
+
+      p
+        font-size: 12px
+        line-height: 1.5
+        color: #4b5563
+
+.reviews__container
+  width: 100%
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column
+  -webkit-box-align: start
+  -ms-flex-align: start
+  align-items: flex-start
+
+  .reviews__list
+    width: 100%
+    display: -ms-grid
+    display: grid
+    -ms-grid-columns: 1fr 32px 1fr
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 32px
+
+    .review__single
+      padding: 30px
+      border: 1px solid #d1d5dc
+      border-radius: 4px
+
+      .review__row
+        width: 100%
+        margin-bottom: 15px
+        display: -webkit-inline-box
+        display: -ms-inline-flexbox
+        display: inline-flex
+        -webkit-box-pack: justify
+        -ms-flex-pack: justify
+        justify-content: space-between
+        -webkit-box-align: end
+        -ms-flex-align: end
+        align-items: flex-end
+
+      .date
+        font-size: 12px
+
+      .review__stars
+        margin-bottom: 20px
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+
+        > *
+          display: -webkit-box
+          display: -ms-flexbox
+          display: flex
+          color: #facc15
+
+          &:not(:last-child)
+            margin-right: 5px
+
+      .review__text
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
+        -webkit-box-align: start
+        -ms-flex-align: start
+        align-items: flex-start
+
+        b, p
+          font-size: 14px
+
+        b:not(:last-child), p:not(:last-child)
+          margin-bottom: 10px
