@@ -27,18 +27,38 @@
 
   <div class="procucts__container">
     <div class="products__filter">
-      TODO: 'y[00] continue here - filters
-<!--      <ng-container *ngIf="productFilters?.length">-->
-<!--        <div class="filter__group">-->
-<!--          <h4 class="filter__title">{{productFilters[0]?.facetValue?.facet?.name | uppercase}}</h4>-->
-<!--          <ul class="filter__checks">-->
-<!--            <li class="filter_checks__item">-->
-<!--              <i class="fas fa-check-square"></i>-->
-<!--              <span class="text">{{productFilters[0]?.facetValue?.name}}</span>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--      </ng-container>-->
+      <ng-container *ngIf="productFilters?.length">
+        <div class="filter__group">
+          <h4 class="filter__title">{{productFilters[0]?.facetValue?.facet?.name | uppercase}}</h4>
+          <ul class="filter__checks">
+            <li class="filter_checks__item d-inline">
+              <!-- <i class="fas fa-check-square"></i> -->
+              <div *ngFor="let cat of productFilters">
+                <ng-container *ngIf="cat.facetValue.facet.name == 'category'">
+                  <input #valueCheck class="me-2" type="checkbox" (change)="getFilerProduct(valueCheck.value)">
+                  <span class="text">{{cat.facetValue.name}}</span>
+                </ng-container>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="productFilters?.length">
+        <div class="filter__group">
+          <h4 class="filter__title">{{productFilters[2]?.facetValue?.facet?.name | uppercase}}</h4>
+          <ul class="filter__checks">
+            <li class="filter_checks__item d-inline">
+              <!-- <i class="fas fa-check-square"></i> -->
+              <div *ngFor="let cat of productFilters">
+                <ng-container *ngIf="cat.facetValue.facet.name == 'brand'">
+                  <input #valueCheck class="me-2" type="checkbox" (change)="getFilerProduct(valueCheck.value)">
+                  <span class="text">{{cat.facetValue.name}}</span>
+                </ng-container>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
     </div>
 
     <div class="procucts__list">

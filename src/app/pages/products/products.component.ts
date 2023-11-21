@@ -47,6 +47,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
     this.subscription.add(getCollectionProductsStream$)
   }
+  getFilerProduct(value:any)
+  {
+    this.apiService.getCollectionProducts(value).subscribe(data=>{
+      // Check this logic
+      this.products = data.data.search.items;
+      this.productFilters = data.data.search.facetValues;
+    })
+  }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
